@@ -36,7 +36,6 @@ interface SecondProps {
 }
 
 const Post: React.FC<SecondProps> = ({ data }) => {
-  console.log(data);
   const rows = data || [];
 
   return (

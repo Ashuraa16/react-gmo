@@ -1,6 +1,7 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
 import Post from "../components/Post";
+import Department from "../components/Department";
 interface Item {
   userId: number;
   id: number;
@@ -13,7 +14,6 @@ interface SecondProps {
 }
 
 const Second: React.FC<SecondProps> = ({ data }) => {
-  console.log(data);
   const cdata: string | null = localStorage.getItem("formData");
   if (cdata === null) {
     return <Navigate to="/" />;
@@ -22,6 +22,7 @@ const Second: React.FC<SecondProps> = ({ data }) => {
   return (
     <div>
       <Post data={data}/>
+      <Department/>
     </div>
   );
 };

@@ -1,9 +1,8 @@
-import "./App.css";
+import "./styles/App.css";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
-  // Navigate,
 } from "react-router-dom";
 import { useEffect, useState } from "react";
 import SignIn from "./pages/SignIn";
@@ -37,8 +36,6 @@ function App() {
 
     fetchData();
   }, []);
-  // const checkData: string | null = localStorage.getItem("formData");
-  console.log("app", data);
   return (
     <>
       <Router>
