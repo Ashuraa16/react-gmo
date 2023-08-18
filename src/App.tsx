@@ -28,7 +28,7 @@ function App() {
         );
         const responseData = await response.json();
         // Slice the data to only the first 5 items
-        const slicedData = responseData.slice(0, 5);
+        const slicedData = responseData;
         setData(slicedData);
       } catch (error) {
         console.error("Error fetching data:", error);
