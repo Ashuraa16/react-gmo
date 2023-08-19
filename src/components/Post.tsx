@@ -1,8 +1,8 @@
-import Box from "@mui/material/Box";
-import { DataGrid, GridColDef,  } from "@mui/x-data-grid";
+import Box from '@mui/material/Box';
+import { DataGrid, GridColDef } from '@mui/x-data-grid';
 
 const columns: GridColDef[] = [
-  { field: "id", headerName: "ID", width: 90 },
+  { field: 'id', headerName: 'ID', width: 90 },
   {
     field: 'userId',
     headerName: 'userId',
@@ -21,7 +21,6 @@ const columns: GridColDef[] = [
     width: 800,
     editable: true,
   },
-  
 ];
 
 interface Item {
@@ -40,7 +39,7 @@ const Post: React.FC<SecondProps> = ({ data }) => {
 
   return (
     <div>
-      <Box sx={{ height: 400, width: "100%" }}>
+      <Box sx={{ height: 400, width: '100%' }}>
         <DataGrid
           rows={rows}
           columns={columns}

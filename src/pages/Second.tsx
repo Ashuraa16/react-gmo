@@ -1,7 +1,7 @@
-import React from "react";
-import { Navigate } from "react-router-dom";
-import Post from "../components/Post";
-import Department from "../components/Department";
+import React from 'react';
+import { Navigate } from 'react-router-dom';
+import Post from '../components/Post';
+import Department from '../components/Department';
 interface Item {
   userId: number;
   id: number;
@@ -14,15 +14,15 @@ interface SecondProps {
 }
 
 const Second: React.FC<SecondProps> = ({ data }) => {
-  const cdata: string | null = localStorage.getItem("formData");
+  const cdata: string | null = localStorage.getItem('formData');
   if (cdata === null) {
     return <Navigate to="/" />;
   }
 
   return (
     <div>
-      <Post data={data}/>
-      <Department/>
+      <Post data={data} />
+      <Department />
     </div>
   );
 };

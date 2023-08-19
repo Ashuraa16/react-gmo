@@ -45,7 +45,7 @@ export default function Design() {
   );
 
   return (
-    <div>
+    <div style={{margin:20,marginTop:10}}>
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
         <HorizontalRuleIcon sx={{ cursor: 'pointer' }} onClick={handleLineClick} />
         <FormControlLabel
