@@ -8,14 +8,22 @@ import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import Menu from '@mui/material/Menu';
 
+// Main component for the navigation bar
 export default function Navbar() {
+  // State for the anchor element of the menu
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+
+  // Handler for opening the menu
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
+
+  // Handler for closing the menu
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  // Render the navigation bar
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">

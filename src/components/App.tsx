@@ -2,7 +2,7 @@ import '../styles/App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import SignIn from '../pages/SignIn';
-import Navbar from './Navbar';
+import {Navbar} from './';
 import Second from '../pages/Second';
 
 interface Item {
@@ -11,8 +11,11 @@ interface Item {
   title: string;
   body: string;
 }
+// Main component
 function App() {
+  // State to hold the fetched data
   const [data, setData] = useState<Item[] | null>(null);
+  // Fetch data from API using useEffect
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -28,6 +31,7 @@ function App() {
 
     fetchData();
   }, []);
+  // Render the component
   return (
     <>
       <Router>

@@ -5,9 +5,11 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
 
 export default function Customer() {
+  // State for checkboxes and controlling child components
   const [checked, setChecked] = React.useState([true, false]);
   const [showChildren, setShowChildren] = React.useState(true);
 
+  // Handlers for checkbox changes
   const handleChange1 = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked([event.target.checked, event.target.checked]);
   };
@@ -20,10 +22,12 @@ export default function Customer() {
     setChecked([checked[0], event.target.checked]);
   };
 
+  // Handler for clicking the horizontal rule
   const handleLineClick = () => {
     setShowChildren(!showChildren);
   };
 
+  // Child component (conditionally rendered)
   const children = (
     <Box sx={{ display: 'flex', flexDirection: 'column', ml: 3 }}>
       {showChildren && (
@@ -41,6 +45,7 @@ export default function Customer() {
     </Box>
   );
 
+  // Render the Customer component
   return (
     <div style={{ margin: 20, marginTop: 10 }}>
       <Box sx={{ display: 'flex', alignItems: 'center' }}>

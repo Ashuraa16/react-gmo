@@ -1,6 +1,7 @@
-import Customer from './Customer';
-import Design from './Design';
+// Import necessary components
+import { Customer, Design } from './';
 function Department() {
+  // Render department information
   return (
     <div
       style={{

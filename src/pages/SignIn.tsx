@@ -13,15 +13,18 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const defaultTheme = createTheme();
 
 export default function SignIn() {
+  // State to manage form data
   const [formData, setFormData] = React.useState({
     name: '',
     email: '',
     number: '',
   });
+  // Check if form data exists in local storage and redirect if it does
   const data: string | null = localStorage.getItem('formData');
   if (data !== null) {
     return <Navigate to="/second" />;
   }
+  // Handle form submission
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -30,7 +33,6 @@ export default function SignIn() {
       email: data.get('email'),
       number: data.get('number'),
     };
-
     // Store form data in local storage
     localStorage.setItem('formData', JSON.stringify(formDataObject));
 
