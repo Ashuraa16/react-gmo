@@ -9,6 +9,8 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const defaultTheme = createTheme();
 
@@ -33,8 +35,23 @@ export default function SignIn() {
       email: data.get('email'),
       number: data.get('number'),
     };
-    // Store form data in local storage
-    localStorage.setItem('formData', JSON.stringify(formDataObject));
+    // Check if any form field has a value before updating local storage
+    if (formDataObject.name || formDataObject.email || formDataObject.number) {
+      // Store form data in local storage
+      localStorage.setItem('formData', JSON.stringify(formDataObject));
+    } else {
+      // Display an toast if no fields are filled
+      toast.error('Please fill the form completely', {
+        position: 'top-left',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: 'dark',
+      });
+    }
 
     // Reset the form values
     setFormData({

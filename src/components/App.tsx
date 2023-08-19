@@ -5,6 +5,12 @@ import SignIn from '../pages/SignIn';
 import {Navbar} from './';
 import Second from '../pages/Second';
 
+
+
+const Page404 = () => {
+  return <h1>Page 404</h1>;
+};
+
 interface Item {
   userId: number;
   id: number;
@@ -39,6 +45,7 @@ function App() {
         <Routes>
           <Route path="/" element={<SignIn />} />
           <Route path="/second" element={<Second data={data} />} />
+          <Route path="*" element={<Page404 />} />
         </Routes>
       </Router>
     </>
